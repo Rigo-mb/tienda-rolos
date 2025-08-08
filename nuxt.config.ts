@@ -1,13 +1,11 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import tsconfigPaths from 'vite-tsconfig-paths';
+
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
-
-  // Módulos instalados
-  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui'],
-
-  // Importar el CSS de Tailwind
-  css: ['@/assets/css/app.css'],
-})
-
-
+  css: [
+    '@/assets/css/app.css',
+    '@/assets/css/legacy-style.css'
+  ],
+  vite: {
+    plugins: [tsconfigPaths()]
+  }
+});
